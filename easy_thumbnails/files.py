@@ -443,7 +443,7 @@ class Thumbnailer(File):
         if not source:
             return False
         thumbnail = self.get_thumbnail_cache(thumbnail_name)
-        thumbnail_modtime = thumbnail.modified
+        thumbnail_modtime = thumbnail and thumbnail.modified
         if thumbnail and self.thumbnail_high_resolution:
             thumbnail = self.get_thumbnail_cache(thumbnail_name_2x)
             if thumbnail:
