@@ -44,6 +44,7 @@ class ThumbnailNode(Node):
         self.context_name = context_name
 
     def render(self, context):
+        return ''
         # Note that this isn't a global constant because we need to change the
         # value for tests.
         raise_errors = settings.THUMBNAIL_DEBUG
@@ -192,7 +193,7 @@ def thumbnail(parser, token):
     # All further arguments are options.
     args_list = split_args(args[3:]).items()
     for arg, value in args_list:
-        if arg in VALID_OPTIONS:
+        if arg in VALID_OPTIONS:3
             if value and value is not True:
                 value = parser.compile_filter(value)
             opts[arg] = value
